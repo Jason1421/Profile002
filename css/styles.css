@@ -1,0 +1,142 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, cite, form, label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #fff; /* White text */
+    background-color: #1a1a1a; /* Dark background */
+    margin: 20px;
+}
+
+header, nav, main, footer, article, aside, section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgba(42, 42, 42, 0.5); 
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Cyan LED effect */
+    border: 1px solid rgba(0, 255, 255, 0.5); /* Border with LED glow */
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #00ffff; /* Cyan to match the LED effect */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #333;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+figure img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 20px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #333;
+    border-left: 5px solid #00ffff; /* Cyan LED effect */
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;}
+
+aside h3 {
+    margin-bottom: 10px;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+    background-color: #333;
+    border: 1px solid rgba(0, 255, 255, 0.5); /* Border with LED glow */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Cyan LED effect */
+}
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* General styling for images */
+img {
+    width: 400px;
+    max-width: 400px;
+    max-width: 100%; /* Ensure the image doesn't overflow its container */
+    border-radius: 50%; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    display: block; /* Removes bottom margin/whitespace */
+    margin: 20px auto; /* Center the image in its container */
+}
+
+/* Hover effect for images */
+img:hover {
+    transform: scale(1.05); /* Slightly scale the image */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow for a lifted effect */
+}
+
+/* Optional: Add a border */
+img.border {
+    border: 3px solid rgba(0, 255, 255, 0.8); /* Cyan border to match the LED theme */
+}
+
+#profilePic {
+    width: 150px; /* Adjust as necessary */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s, left 0.3s; /* Smooth movement */
+    z-index: 10;
+}
