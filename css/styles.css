@@ -140,3 +140,22 @@ img.border {
     transition: top 0.3s, left 0.3s; /* Smooth movement */
     z-index: 10;
 }
+
+
+.boxRow {
+    position: absolute;
+    left: 0;
+    height: 30px; /* Height of each row */
+    width: 100%;
+    overflow: hidden; /* Hide boxes that go outside the row */
+}
+
+.box {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: rgba(0,255,255,0.5);
+    margin-right: 10px;
+    border-radius: 10px; /* Rounded corners */
+}
+

@@ -78,7 +78,7 @@ animate();
 
 const profilePic = document.getElementById('profilePic');
 
-// Store the initial position
+// Store the initial position for the playful interaction with the profile picture
 const initialPosition = {
     left: profilePic.offsetLeft,
     top: profilePic.offsetTop
@@ -117,3 +117,47 @@ document.addEventListener('mousemove', function(e) {
         profilePic.style.top = `${initialPosition.top}px`;
     }
 });
+
+const backgroundContainer = document.getElementById('boxBackground');
+const numOfRows = 5; // Reduced number for rarity
+
+for (let i = 0; i < numOfRows; i++) {
+    const row = document.createElement('div');
+    row.classList.add('boxRow');
+
+    // Set top position randomly with added space between rows for rarity
+    row.style.top = `${Math.random() * window.innerHeight * 1.5}px`;
+
+    const boxesPerRow = Math.floor(Math.random() * 15) + 5;  // Random number of boxes between 5 and 20
+
+    // Create random number of boxes in each row
+    for (let j = 0; j < boxesPerRow; j++) {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        row.appendChild(box);
+    }
+
+    backgroundContainer.appendChild(row);
+}
+
+// Animate the rows of boxes for the background effect
+function animateRows() {
+    const rows = document.querySelectorAll('.boxRow');
+    rows.forEach((row, index) => {
+        const speed = 1 + index * 0.2; // Closer rows move faster
+        row.style.left = `${row.offsetLeft - speed}px`;
+
+        // If row goes completely out of the screen, reset its position
+        if (row.offsetLeft + row.offsetWidth < 0) {
+            row.style.left = `${window.innerWidth}px`;
+        }
+    });
+
+    requestAnimationFrame(animateRows);
+}
+
+animateRows();
+
+
+
+
